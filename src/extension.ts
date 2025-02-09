@@ -35,7 +35,10 @@ function setConfig() {
 		3: extensionConfig.get("darkHighContrastWeight"),
 		4: extensionConfig.get("lightHighContrastWeight"),
 	}
-	setFontWeight(settings[currentThemeType], extensionConfig.get("includeTerminal"))
+	setFontWeight(
+		settings[currentThemeType] as string,
+		extensionConfig.get("includeTerminal") as boolean
+	)
 }
 
 export function activate() {

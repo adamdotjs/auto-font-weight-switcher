@@ -2,11 +2,11 @@
 	"name": "auto-font-weight-switcher",
 	"displayName": "Auto Font Weight Switcher",
 	"description": "Automatically adjust font weight based on theme type.",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"engines": {
 		"vscode": "^1.97.0"
 	},
-	"publisher": "adamdotjs",
+	"publisher": "avidworks",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/adamdotjs/auto-font-weight-switcher.git"
