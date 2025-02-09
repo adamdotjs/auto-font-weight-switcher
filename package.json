@@ -1,0 +1,148 @@
+{
+	"name": "auto-font-weight-switcher",
+	"displayName": "Auto Font Weight Switcher",
+	"description": "Automatically adjust font weight based on theme type.",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.97.0"
+	},
+	"publisher": "adamdotjs",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/adamdotjs/auto-font-weight-switcher.git"
+	},
+	"galleryBanner": {
+		"color": "#002b36"
+	},
+	"icon": "icon.png",
+	"keywords": [
+		"font",
+		"font weight",
+		"font changer",
+		"font switcher",
+		"auto font",
+		"change font weight"
+	],
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"main": "./dist/extension.js",
+	"contributes": {
+		"configuration": {
+			"title": "Auto Font Weight Switcher",
+			"properties": {
+				"autoFontWeightSwitcher.lightWeight": {
+					"type": "string",
+					"default": "400",
+					"description": "Set font weight for light themes",
+					"enum": [
+						"100",
+						"200",
+						"300",
+						"400",
+						"450",
+						"500",
+						"600",
+						"700",
+						"800",
+						"900",
+						"normal",
+						"bold"
+					]
+				},
+				"autoFontWeightSwitcher.darkWeight": {
+					"type": "string",
+					"default": "400",
+					"description": "Set font weight for dark themes",
+					"enum": [
+						"100",
+						"200",
+						"300",
+						"400",
+						"450",
+						"500",
+						"600",
+						"700",
+						"800",
+						"900",
+						"normal",
+						"bold"
+					]
+				},
+				"autoFontWeightSwitcher.lightHighContrastWeight": {
+					"type": "string",
+					"default": "400",
+					"description": "Set font weight for light high contrast themes",
+					"enum": [
+						"100",
+						"200",
+						"300",
+						"400",
+						"450",
+						"500",
+						"600",
+						"700",
+						"800",
+						"900",
+						"normal",
+						"bold"
+					]
+				},
+				"autoFontWeightSwitcher.darkHighContrastWeight": {
+					"type": "string",
+					"default": "400",
+					"description": "Set font weight for dark high contrast themes",
+					"enum": [
+						"100",
+						"200",
+						"300",
+						"400",
+						"450",
+						"500",
+						"600",
+						"700",
+						"800",
+						"900",
+						"normal",
+						"bold"
+					]
+				},
+				"autoFontWeightSwitcher.includeTerminal": {
+					"type": "boolean",
+					"default": true,
+					"description": "Include setting terminal font weight"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run package",
+		"compile": "npm run check-types && npm run lint && node esbuild.js",
+		"watch": "npm-run-all -p watch:*",
+		"watch:esbuild": "node esbuild.js --watch",
+		"watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+		"package": "npm run check-types && npm run lint && node esbuild.js --production",
+		"compile-tests": "tsc -p . --outDir out",
+		"watch-tests": "tsc -p . -w --outDir out",
+		"pretest": "npm run compile-tests && npm run compile && npm run lint",
+		"check-types": "tsc --noEmit",
+		"lint": "eslint src",
+		"test": "vscode-test"
+	},
+	"devDependencies": {
+		"@types/mocha": "^10.0.7",
+		"@types/node": "20.x",
+		"@types/vscode": "^1.97.0",
+		"@typescript-eslint/eslint-plugin": "^8.3.0",
+		"@typescript-eslint/parser": "^8.3.0",
+		"@vscode/test-cli": "^0.0.10",
+		"@vscode/test-electron": "^2.4.1",
+		"esbuild": "^0.23.1",
+		"eslint": "^9.9.1",
+		"npm-run-all": "^4.1.5",
+		"typescript": "^5.5.4"
+	}
+}
